@@ -10,18 +10,16 @@
     <?php
         require("ContaBanco.php");
         $contaJubileu = new ContaBanco();
-        $contaJubileu -> setTipo("CP");
+        $contaJubileu -> abrirConta("CP");
         $contaJubileu -> setDono("Jubileu Faria");
-        $contaJubileu -> abrirConta();
         $contaJubileu -> setNumConta(1248);
         $contaJubileu -> getSaldo();
         $contaJubileu -> depositar(300);
         print_r($contaJubileu);
 
         $contaCleusa = new ContaBanco();
-        $contaCleusa -> setTipo("CC");
+        $contaCleusa -> abrirConta("CC");
         $contaCleusa -> setDono("Cleusa Maria");
-        $contaCleusa -> abrirConta();
         $contaCleusa -> setNumConta("3202");
         $contaCleusa -> depositar(500);
         $contaCleusa -> sacar(100);

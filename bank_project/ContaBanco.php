@@ -30,8 +30,8 @@
             return $this->tipo;
         }
 
-        public function setTipo($t) {
-            $this->tipo = $t;
+        public function setTipo($tipo) {
+            $this->tipo = $tipo;
         }
 
         public function getDono() {
@@ -58,27 +58,26 @@
             $this->status = $stat;
         }
 
-        public function abrirConta() {
-            if($this->tipo == "CC" ) {
-                $this->status = true;
-                $this-> setSaldo(50);
-                echo "Você solicitou a abertura de uma Conta Corrente. Abrindo... <br>";
-                echo "Sua conta está {$this->getStatus()} <br>";
-                echo "Por ter aberto uma CC. Nosso banco te beneficia com R$50,00 <br><br>";
+        public function abrirConta($t) {
+            $this->setTipo($t);
+            $this->setStatus(true);
+
+            if($t == "CC" ) {
+                $this-> setSaldo(50); //Conta corrente recebe 50 reais por ter aberto a conta
+
+            } else if($t == "CP") {
+                $this ->setSaldo(150); //Conta poupança recebe 150 reais por ter aberto a conta
+
             } else {
-                $this ->status = true;
-                $this ->setSaldo(150);
-                echo "Você solicitou a abertura de uma Conta Poupança. Abrindo... <br>";
-                echo "Sua conta está {$this->getStatus()} <br>";
-                echo "Por ter aberto uma CP. Nosso banco te beneficia com R$150,00 <br><br>";
+                echo "Tipo não reconhecido. Tente CP ou CC";
             }
         }
 
         public function fecharConta() {
             if($this->getSaldo() > 0) {
-                echo "A conta tem dinheiro. Impossível fechá-la <br>";
+                echo "<p>A conta tem dinheiro. Impossível fechá-la</p>";
             } else if($this->getSaldo() < 0) {
-                echo "A conta está em débito<br>";
+                echo "<p>A conta está em débito</p>";
             } else {
                 $this->setStatus(false);
                 echo "Conta fechada<br>";
@@ -86,7 +85,7 @@
         }
 
         public function depositar($valor) {
-            if($this->status = true) {
+            if($this->getStatus()) { // não precisa colocar = true
                 $this->setSaldo(($this->getSaldo() + $valor));
                 echo "Você depositou R$". number_format($valor,2) . "<br>";
                 echo "Saldo Atual: R$" . number_format($this->getSaldo(),2) . "<br><br>"; 
