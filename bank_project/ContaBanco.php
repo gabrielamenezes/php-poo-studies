@@ -12,8 +12,8 @@
         //construtor 
 
         public function __construct() {
-            $this->saldo = 0;
-            $this->status = false;
+            $this->setSaldo(0);
+            $this->setStatus(false);
         }
 
         // criando os métodos
@@ -80,6 +80,8 @@
                 echo "<p>A conta está em débito</p>";
             } else {
                 $this->setStatus(false);
+                $this->setDono(null);
+                $this->setTipo(null);
                 echo "Conta fechada<br>";
             }
         }
@@ -95,37 +97,29 @@
         }
 
         public function sacar($valorSaque) {
-            if($valorSaque > $this->getSaldo() || $this->status = false) {
-                echo "Não foi possível sacar <br>";
-            } else {
-                echo "Você está sacando R$" . number_format($valorSaque, 2) . "<br>";
-                $this->setSaldo($this->getSaldo() - $valorSaque);
-                echo "Saldo Atual: R$" . number_format($this->getSaldo(),2) . "<br><br>";
-            }
+            if($this->getStatus()) {
+                if($this->getSaldo() >= $valorSaque) {
+                    $this->setSaldo($this->getSaldo() - $valorSaque);
+                } else {
+                    echo "<p>Valor insuficiente para saque</p>";
+                }
+        } else {
+            echo "Conta fechada";
         }
+    }
 
         public function pagarMensal() {
-            if($this->tipo = "CC") {
+            if($this->getTipo() == "CC") {
                 $mensal= 12;
-            } else if ($this->tipo = "CP") {
+            } else if ($this->getTipo() == "CP") {
                 $mensal= 20;
             } else {
                 echo "Tipo Inválido";
             }
-            if($this->status=true) {
-                if($this->getSaldo() > $mensal) {
-                    $this->setSaldo($this->getSaldo() - $mensal);
-                    echo "SALDO ATUAL: R$". number_format($this->getSaldo(), 2) . "<br>";
-                } else {
-                    echo "Saldo Insuficiente";
-                }
+            if($this->getStatus()) {
+                $this->setSaldo($this->getSaldo() - $mensal);
             } else {
-                echo "Impossível pagar. Verifique o status da sua conta";
+                echo "Verifique o status da sua conta";
             }
         }
-
-
     }
-
-
-?>

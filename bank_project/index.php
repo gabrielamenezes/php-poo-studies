@@ -13,8 +13,8 @@
         $contaJubileu -> abrirConta("CP");
         $contaJubileu -> setDono("Jubileu Faria");
         $contaJubileu -> setNumConta(1248);
-        $contaJubileu -> getSaldo();
         $contaJubileu -> depositar(300);
+        $contaJubileu -> pagarMensal();
         print_r($contaJubileu);
 
         $contaCleusa = new ContaBanco();
@@ -23,7 +23,6 @@
         $contaCleusa -> setNumConta("3202");
         $contaCleusa -> depositar(500);
         $contaCleusa -> sacar(100);
-        $contaCleusa -> pagarMensal();
         print_r($contaCleusa);
 
     ?>
