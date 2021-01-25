@@ -25,6 +25,7 @@
         $contaCleusa -> setNumConta("3202");
         $contaCleusa -> depositar(500);
         $contaCleusa -> sacar(100);
+        $contaCleusa -> pagarMensal();
         print_r($contaCleusa);
 
     ?>

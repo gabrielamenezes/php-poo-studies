@@ -107,15 +107,21 @@
 
         public function pagarMensal() {
             if($this->tipo = "CC") {
-                $mensalC = 12;
-                echo "Mensalidade: R$" . number_format($mensalC, 2) . "<br>";
-                $this->setSaldo($this->getSaldo() - $mensalC);
-                echo "Saldo Atual: R$" . number_format($this->getSaldo(), 2) . "<br>";
+                $mensal= 12;
+            } else if ($this->tipo = "CP") {
+                $mensal= 20;
             } else {
-                $mensalP = 20;
-                echo "Mensalidade: R$" . number_format($mensalP, 2) . "<br>";
-                $this->setSaldo($this->getSaldo() - $mensalP) . "<br>";
-                echo "Saldo Atual: R$" . number_format($this->getSaldo(), 2) . "<br>";
+                echo "Tipo Inválido";
+            }
+            if($this->status=true) {
+                if($this->getSaldo() > $mensal) {
+                    $this->setSaldo($this->getSaldo() - $mensal);
+                    echo "SALDO ATUAL: R$". number_format($this->getSaldo(), 2) . "<br>";
+                } else {
+                    echo "Saldo Insuficiente";
+                }
+            } else {
+                echo "Impossível pagar. Verifique o status da sua conta";
             }
         }
 
