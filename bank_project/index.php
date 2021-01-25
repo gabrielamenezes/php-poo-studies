@@ -9,7 +9,7 @@
     <pre>
     <?php
         require("ContaBanco.php");
-        $contaJubileu = new ContaBanco(false, 0);
+        $contaJubileu = new ContaBanco();
         $contaJubileu -> setTipo("CP");
         $contaJubileu -> setDono("Jubileu Faria");
         $contaJubileu -> abrirConta();
@@ -18,7 +18,7 @@
         $contaJubileu -> depositar(300);
         print_r($contaJubileu);
 
-        $contaCleusa = new ContaBanco(false, 0);
+        $contaCleusa = new ContaBanco();
         $contaCleusa -> setTipo("CC");
         $contaCleusa -> setDono("Cleusa Maria");
         $contaCleusa -> abrirConta();

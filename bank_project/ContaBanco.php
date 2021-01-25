@@ -11,9 +11,9 @@
 
         //construtor 
 
-        public function __construct($status, $saldo) {
-            $this->setStatus($status);
-            $this->setSaldo($saldo);
+        public function __construct() {
+            $this->saldo = 0;
+            $this->status = false;
         }
 
         // criando os métodos
@@ -71,6 +71,17 @@
                 echo "Você solicitou a abertura de uma Conta Poupança. Abrindo... <br>";
                 echo "Sua conta está {$this->getStatus()} <br>";
                 echo "Por ter aberto uma CP. Nosso banco te beneficia com R$150,00 <br><br>";
+            }
+        }
+
+        public function fecharConta() {
+            if($this->getSaldo() > 0) {
+                echo "A conta tem dinheiro. Impossível fechá-la <br>";
+            } else if($this->getSaldo() < 0) {
+                echo "A conta está em débito<br>";
+            } else {
+                $this->setStatus(false);
+                echo "Conta fechada<br>";
             }
         }
 
