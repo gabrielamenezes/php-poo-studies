@@ -15,26 +15,27 @@ require_once("Controlador.php");
             $this->setTocando(false);
         }
 
-        public function getVolume() {
+        private function getVolume() {
             return $this->volume;
         }
 
-        public function setVolume($volume) {
+        private function setVolume($volume) {
             $this->volume = $volume;
         }
 
-        public function getLigado() {
+        private function getLigado() {
             return $this->ligado;
         }
 
-        public function setLigado($ligado) {
+        private function setLigado($ligado) {
             $this->ligado = $ligado;
         }
 
-        public function getTocando() {
+        private function getTocando() {
             return $this->tocando;
         }
-        public function setTocando($tocando) {
+
+        private function setTocando($tocando) {
             $this->tocando = $tocando;
         }
 
@@ -47,12 +48,13 @@ require_once("Controlador.php");
         }
 
         public function abrirMenu() {
-            echo "<br>Está Ligado?: " . ($this->getLigado()) ?? "NÃO";
-            echo "<br>Está tocando?: " . ($this->getTocando()) ?? "NÃO";
+            echo "<p>-------------MENU-----------</p>";
+            echo "<br>Está Ligado?: " . ($this->getLigado()? "SIM" : "NÃO");
+            echo "<br>Está tocando?: " . ($this->getTocando()? "SIM" : "NÃO");
             echo "<br>Volume: " . ($this->getVolume());
 
             for($i = 0; $i<= $this->getVolume(); $i+=10) {
-                echo "|";
+                echo " |";
             }
             echo "<br>";
         }
