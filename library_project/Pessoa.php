@@ -41,10 +41,10 @@
         }
 
         public function perfil() {
-            echo "<hr>";
             echo "<p>Nome: ". $this->getPessoa() . "</p>";
             echo "<p>Idade: " . $this->getIdade(). "</p>";
             echo "<p>Sexo: " . $this->getSexo(). "</p>";
+            echo "<hr>";
         }
     }
 
