@@ -12,6 +12,19 @@ require_once("Combate.php");
         private $derrotas;
         private $empates;
 
+        // Construtor 
+
+        public function __construct($no, $na, $age, $alt, $pe, $win, $lose, $emp)
+        {
+            $this->setNome($no);
+            $this->setNacionalidade($na);;
+            $this->setIdade($age);
+            $this->setAltura($alt);
+            $this->setPeso($pe);
+            $this->setVitorias($win);
+            $this->setDerrotas($lose);
+            $this->setEmpates($emp);
+        }
         //Métodos Especiais
         public function getNome() {
             return $this->nome;
