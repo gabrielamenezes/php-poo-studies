@@ -94,6 +94,39 @@ require_once("Combate.php");
         public function setEmpates($empates) {
             $this->empates = $empates;
         }
+
+        //métodos abstratos
+
+        public function apresentar() {
+            echo "<p>Lutador: " . $this->getNome() . "</p>";
+            echo "<p>Nacionalidade: " . $this->getNacionalidade() . "</p>";
+            echo "<p>Idade: " . $this->getIdade() . " anos </p>";
+            echo "<p>".$this->getAltura() . "m de alturas</p>";
+            echo "<p>Ganhou: " . $this->getVitorias() . "</p>";
+            echo "<p>Perdeu: " . $this->getDerrotas() . "</p>";
+            echo "<p>Empatou: " . $this->getEmpates() . "</p>";
+        }
+
+        public function status() {
+            echo $this->getNome() . "<br>";
+            echo "CATEGORIA: " . $this->getCategoria() . "<br>";
+            echo $this->getVitorias() . " vitórias <br>";
+            echo $this->getDerrotas() . " derrotas <br>";
+            echo $this-> getEmpates() . " empates <br>";
+        }
+
+        public function ganharLuta() {
+            $this->setVitorias($this->getVitorias() + 1);
+        }
+
+        public function perderLuta() {
+            $this->setDerrotas($this->getDerrotas() + 1);
+        }
+
+        public function empatarLuta() {
+            $this->setEmpates($this->getEmpates() + 1);
+        }
+
     }
 
 ?>
