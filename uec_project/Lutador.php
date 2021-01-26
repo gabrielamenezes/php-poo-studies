@@ -110,9 +110,9 @@
         //métodos abstratos
 
         public function apresentar() {
-            echo "<p>-------------------------------------</p>";
+            echo "<hr>";
             echo "CHEGOU A HORA! O Lutador " . $this->getNome();
-            echo "veio diretamente de " . $this->getNacionalidade();
+            echo " veio diretamente de " . $this->getNacionalidade();
             echo "<p>Tem " . $this->getIdade() . " anos </p>";
             echo "<p>".$this->getAltura() . "m de altura</p>";
             echo "<p>Ele ganhou: " . $this->getVitorias() . " lutas</p>";
@@ -121,7 +121,7 @@
         }
 
         public function status() {
-            echo "<p>-----------------------------------------</p>";
+            echo "<hr>";
             echo "<p><strong>" . $this->getNome() . "</strong></p>";
             echo "<p><strong>CATEGORIA:</strong> " . $this->getCategoria() . "</p>";
             echo "<p>" . $this->getVitorias() . " vitórias </p>";
