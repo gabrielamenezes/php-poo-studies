@@ -114,7 +114,7 @@ require_once("Combate.php");
             echo "<p>Lutador: " . $this->getNome() . "</p>";
             echo "<p>Nacionalidade: " . $this->getNacionalidade() . "</p>";
             echo "<p>Idade: " . $this->getIdade() . " anos </p>";
-            echo "<p>".$this->getAltura() . "m de alturas</p>";
+            echo "<p>".$this->getAltura() . "m de altura</p>";
             echo "<p>Ganhou: " . $this->getVitorias() . "</p>";
             echo "<p>Perdeu: " . $this->getDerrotas() . "</p>";
             echo "<p>Empatou: " . $this->getEmpates() . "</p>";
