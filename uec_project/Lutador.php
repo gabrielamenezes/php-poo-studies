@@ -69,8 +69,8 @@ require_once("Combate.php");
         public function getCategoria() {
             return $this->categoria;
         }
-        public function setCategoria() {
-            if($this->peso <= 52.2) {
+        private function setCategoria() {
+            if($this->peso < 52.2) {
                 //muito abaixo do peso mínimo necessário
                 $this->categoria = "Inválido";
             }else if($this->peso <= 70.3) {
@@ -111,21 +111,23 @@ require_once("Combate.php");
         //métodos abstratos
 
         public function apresentar() {
-            echo "<p>Lutador: " . $this->getNome() . "</p>";
-            echo "<p>Nacionalidade: " . $this->getNacionalidade() . "</p>";
-            echo "<p>Idade: " . $this->getIdade() . " anos </p>";
+            echo "<p>-------------------------------------</p>";
+            echo "CHEGOU A HORA! O Lutador " . $this->getNome();
+            echo "veio diretamente de " . $this->getNacionalidade();
+            echo "<p>Tem " . $this->getIdade() . " anos </p>";
             echo "<p>".$this->getAltura() . "m de altura</p>";
-            echo "<p>Ganhou: " . $this->getVitorias() . "</p>";
+            echo "<p>Ele ganhou: " . $this->getVitorias() . " lutas</p>";
             echo "<p>Perdeu: " . $this->getDerrotas() . "</p>";
             echo "<p>Empatou: " . $this->getEmpates() . "</p>";
         }
 
         public function status() {
-            echo $this->getNome() . "<br>";
-            echo "CATEGORIA: " . $this->getCategoria() . "<br>";
-            echo $this->getVitorias() . " vitórias <br>";
-            echo $this->getDerrotas() . " derrotas <br>";
-            echo $this-> getEmpates() . " empates <br>";
+            echo "<p>-----------------------------------------</p>";
+            echo "<p><strong>" . $this->getNome() . "</strong></p>";
+            echo "<p><strong>CATEGORIA:</strong> " . $this->getCategoria() . "</p>";
+            echo "<p>" . $this->getVitorias() . " vitórias </p>";
+            echo "<p>" . $this->getDerrotas() . " derrotas </p>";
+            echo "<p>" . $this-> getEmpates() . " empates </p>";
         }
 
         public function ganharLuta() {
