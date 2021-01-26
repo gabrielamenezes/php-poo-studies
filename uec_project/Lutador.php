@@ -1,6 +1,5 @@
 <?php
-require_once("Combate.php");
-    class Lutador implements Combate {
+    class Lutador {
         //Atributos
         private $nome;
         private $nacionalidade;
