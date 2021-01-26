@@ -11,7 +11,7 @@
         private $derrotas;
         private $empates;
 
-        //Métodos
+        //Métodos Especiais
         public function getNome() {
             return $this->nome;
         }
@@ -72,6 +72,26 @@
                 //acima de 120.2 - INVÁLIDO
                 $this->categoria = "Inválido";
             }
+        }
+
+        public function getVitorias() {
+            return $this->vitorias;
+        }
+        public function setVitorias($vitorias) {
+            $this->vitorias = $vitorias;
+        }
+
+        public function getDerrotas() {
+            return $this->derrotas;
+        }
+        public function setDerrotas($derrotas) {
+            $this->derrotas = $derrotas;
+        }
+        public function getEmpates() {
+            return $this->empates;
+        }
+        public function setEmpates($empates) {
+            $this->empates = $empates;
         }
     }
 
