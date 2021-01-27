@@ -6,6 +6,8 @@
         private $idade;
         private $sexo;
 
+        //Não vou usar construtor porque se fosse usa-lo, teria que fazer construtor para todas as classes. O "correto" será utilizar p1->setNome(Nomex) 
+
         //Métodos Públicos
         public function fazerAniv() {
             $this->setIdade($this->getIdade() + 1);
