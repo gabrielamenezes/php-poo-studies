@@ -7,10 +7,22 @@
 
         //Métodos Públicos
         public function cancelarMatr() {
-            $this->matricula = false;
+            $this->matricula = null;
         }
 
         //Métodos Especiais
+        public function getMatricula() {
+            return $this->matricula;
+        }
+        public function setMatricula($matricula) {
+            $this->matricula = $matricula;
+        }
+        public function getCurso() {
+            return $this->curso;
+        }
+        public function setCurso($curso) {
+            $this->curso = $curso;
+        }
     }
     
 
