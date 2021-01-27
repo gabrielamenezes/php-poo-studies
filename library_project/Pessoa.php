@@ -1,29 +1,30 @@
 <?php
     class Pessoa {
         //Atributos
-        private $pessoa;
+        private $nome;
         private $idade;
         private $sexo;
 
         //Construtor 
 
-        public function __construct($person, $age, $genre)
+        public function __construct($nome, $age, $genre)
         {
-            $this->setPessoa($person);
+            $this->setPessoa($nome);
             $this->setIdade($age);
             $this->setSexo($genre);
         }
         //Métodos Públicos
         public function fazerAniver() {
             $this->setIdade($this->getIdade() + 1);
+            echo "<p>Idade: " . $this->getIdade() . "</p>";
         }
 
         //Métodos Especiais
-        public function getPessoa() {
-            return $this->pessoa;
+        public function getNome() {
+            return $this->nome;
         }
-        public function setPessoa($pessoa) {
-            $this->pessoa = $pessoa;
+        public function setPessoa($nome) {
+            $this->nome = $nome;
         }
 
         public function getIdade() {
@@ -41,7 +42,7 @@
         }
 
         public function perfil() {
-            echo "<p>Nome: ". $this->getPessoa() . "</p>";
+            echo "<p>Nome: ". $this->getNome() . "</p>";
             echo "<p>Idade: " . $this->getIdade(). "</p>";
             echo "<p>Sexo: " . $this->getSexo(). "</p>";
             echo "<hr>";

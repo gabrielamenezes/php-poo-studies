@@ -10,21 +10,22 @@
         private $aberto;
         private $leitor;
 
-        public function __construct($t, $a, $totp, $pagA, $reader)
+        public function __construct($t, $a, $totp, $leitor)
         {
             $this->setTitulo($t);
             $this->setAutor($a);
             $this->setTotPaginas($totp);
-            $this->setPagAtual($pagA);
+            $this->setPagAtual(0);
             $this->aberto = false;
-            $this->setLeitor($reader);
+            $this->leitor = $leitor;
         }
         //Métodos Públicos
         public function detalhes() {
             echo "<p>Título: " . $this->getTitulo() . "</P>";
             echo "<p>Autor(a): " . $this->getAutor(). "</p>";
             echo "<p>Páginas: ". $this->getTotPaginas() . "</p>";
-            echo "<p> Página Atual: ". $this->getPagAtual() . "</p>";
+            echo "<p>Página Atual: ". $this->getPagAtual() . "</p>";
+            echo "<p>Leitor: ". $this->leitor->getNome() . "</p>";
             echo "<hr>";
         }
 
@@ -68,8 +69,8 @@
         public function getLeitor() {
             return $this->leitor;
         }
-        public function setLeitor($l1) {
-            $this->leitor = $l1;
+        public function setLeitor($leitor) {
+            $this->leitor = $leitor;
         }
 
         //Métodos da interface
@@ -80,13 +81,14 @@
         public function fechar() {
             $this->setAberto(false);
         }
-        public function folhear() {
+        //parâmetro de folhear diz qual página eu quero ir
+        public function folhear($p) {
 
             if($this->aberto == true) {
-                echo "<p>Página Atual: " . $this->getPagAtual() . "</p>";
-
-                for($c = $this->pagAtual; $c < $this->totPaginas; $c+=10) {
-                    $this->setPagAtual($this->getPagAtual() + 10);
+                if($p < $this->totPaginas) {
+                    $this->setPagAtual($p);
+                }else {
+                    echo $this->setPagAtual(0);
                 } 
             } else {
                 echo "<p>Você deve abrir o livro antes de folhear</p>";
@@ -94,11 +96,21 @@
         }
         public function avancarPag()
         {
-            $this->setPagAtual($this->getPagAtual() + 1);
+            if($this->pagAtual <= $this->totPaginas) {
+                $this->setPagAtual($this->getPagAtual() + 1);
+            } else {
+                echo "Você finalizou o livro". $this->getTitulo;
+            }
         }
         public function voltarPag()
         {
-            $this->setPagAtual($this->getPagAtual() - 1);
+            if($this->pagAtual <= 1) {
+            
+                echo "Impossível voltar";
+             
+            } else {
+                $this->setPagAtual($this->getPagAtual() - 1);
+            }
         }
     }
 
