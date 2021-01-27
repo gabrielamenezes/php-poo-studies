@@ -1,4 +1,5 @@
 <?php
+    require_once("Pessoa.php");
     class Funcionario extends Pessoa
     {
         //Atributos
