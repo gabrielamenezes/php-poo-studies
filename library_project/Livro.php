@@ -11,9 +11,14 @@
 
         //Construtor 
 
-        public function __construct($title, $aut, $totp, $pag, $open, $leit)
+        public function __construct($title, $aut, $totp, $pag, $open)
         {
-            
+            $this->setTitulo($title);
+            $this->setAutor($aut);
+            $this->setTotPaginas($totp);
+            $this->setPagAtual($pag);
+            $this->setAberto(false); //sempre que eu mostrar um livro, este estará fechado
+            $this->setLeitor->getPessoa();
         }
         //Métodos Públicos
         public function detalhes() {
