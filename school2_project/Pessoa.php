@@ -3,9 +3,9 @@
     //Classe abstrata - não pode ser instanciada, só pode servir como progenitora
     abstract class Pessoa
     {
-        private $nome;
-        private $idade;
-        private $sexo;
+        protected $nome;
+        protected $idade;
+        protected $sexo;
         
         //Métodos Públicos
         public function FazerAniv() {
