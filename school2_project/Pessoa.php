@@ -8,8 +8,8 @@
         protected $sexo;
         
         //Métodos Públicos
-        public function FazerAniv() {
-            $this->setIdade($this->getIdade() + 1);
+        public function fazerAniv() {
+            $this->setIdade($this->getIdade() +1);
         }
         //Métodos Especiais (getters e setters)
 
