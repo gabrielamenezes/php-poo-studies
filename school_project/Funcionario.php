@@ -6,9 +6,15 @@
         private $setor;
         private $trabalhando;
 
+        //construtor
+        public function __construct()
+        {
+            $this->trabalhando = false;
+        }
+
         //Métodos Publicos
         public function mudarTrabalho() {
-            if($this->trabalhando = true) {
+            if($this->trabalhando == true) {
                 $this->trabalhando = false;
                 echo "<br>Até amanha!";
             } else {
