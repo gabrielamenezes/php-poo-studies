@@ -5,15 +5,14 @@
         private $bolsa;
         
         public function renovarBolsa() {
-            if($this->getBolsa = false) {
-                $this->setBolsa(true);
-                echo "<p>Bolsa Renovada</p>";
-            } else {
-                echo "<p>Bolsa não expirou</p>";
-            }
+            echo "<p>Bolsa Renovada</p>";
         }
         
-        
+        public function pagarMensal() {
+            //Sobrepõe método de Aluno.php porque eles tem o mesmo nome e mesma assinatura
+            //PHP sobrepoe o método automaticamente
+            echo "<p>$this->nome é bolsista! Então, paga com desconto!</p>";
+        }
 
         public function getBolsa() {
             return $this->bolsa;
