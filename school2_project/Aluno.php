@@ -5,7 +5,8 @@
         private $curso;
         
         public function pagarMensal() {
-
+            //métodos de Pessoa estão protegidos e como Aluno é filho de pessoa, pode acessar diretamente o método
+            echo "Pagando mensalidade do aluno $this->nome";
         }
 
         public function getMatricula() {
