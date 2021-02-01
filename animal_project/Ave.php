@@ -15,15 +15,15 @@
         }
 
         public function locomover() {
-            echo "Voando...";
+            echo "<p>Voando...</p>";
         }
 
         public function alimentar() {
-            echo "Ciscando...";
+            echo "<p>Comendo frutinhos</p>";
         }
         public function emitirSom()
         {
-            echo "Pruuu...";
+            echo "<p>Pruuu...</p>";
         }
     }
 
