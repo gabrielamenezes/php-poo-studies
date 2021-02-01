@@ -1,6 +1,6 @@
 <?php
     require_once("Animal.php");
-    class Ave {
+    class Ave extends Animal {
         private $corPena;
 
         public function fazerNinho() {
@@ -12,6 +12,18 @@
         }
         public function setCorPena($cor) {
             $this->corPena = $cor;
+        }
+
+        public function locomover() {
+            echo "Voando...";
+        }
+
+        public function alimentar() {
+            echo "Ciscando...";
+        }
+        public function emitirSom()
+        {
+            echo "Pruuu...";
         }
     }
 
