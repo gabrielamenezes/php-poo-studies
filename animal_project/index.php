@@ -11,21 +11,24 @@
         require_once("Mamifero.php");
         require_once("Peixe.php");
         require_once("Reptil.php");
+        require_once("Canguru.php");
+        require_once("Cachorro.php");
+        require_once("Cobra.php");
+        require_once("Goldfish.php");
+        require_once("Tartaruga.php");
 
         $m = new Mamifero();
-        $m->setPeso(5.5);
-        $m->setIdade(2);
-        $m->setCorPelo("Preto");
-        $m->locomover();
+        $c = new Canguru();
+        $k = new Cachorro();
+        $s = new Cobra();
+        $t = new Tartaruga();
 
-        $a = new Ave();
-        $a->locomover();
-
-        $p = new Peixe();
-        $p->locomover();
-
-        $r= new Reptil();
-        $r->locomover();
+        $m-> locomover();
+        $c->locomover();
+        $k->locomover();
+        $t->locomover();
+        $k->emitirSom();
+        $c->emitirSom();
 
     ?>
 </body>
