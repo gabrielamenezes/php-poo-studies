@@ -42,7 +42,8 @@
             return $this->avaliacao;
         }
         public function setAvaliacao($avaliacao) {
-            $this->avaliacao = $avaliacao;
+            $media = ($this->avaliacao + $avaliacao) / $this->views;
+            $this->avaliacao = $media;
         }
         public function getViews() {
             return $this->views;
