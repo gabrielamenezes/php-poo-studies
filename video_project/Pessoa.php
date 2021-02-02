@@ -7,7 +7,7 @@
         protected $experiencia;
 
         protected function ganhaExp() {
-            $this->setExperiencia($this->getExperiencia() + 5);
+            $this->setExp($this->getExp() + 5);
         }
 
         public function getNome() {
