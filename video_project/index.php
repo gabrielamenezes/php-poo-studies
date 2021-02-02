@@ -16,6 +16,7 @@
         $v[2]->play();
         print_r($v);
         $g[0] = new Gafanhoto("Gabriela", 21, "F", "gabimmz");
+        $g[1] = new Gafanhoto("Pedro", 18, "M", "pedroh");
         //$g->ganhaExp();
         print_r($g);
     ?>
