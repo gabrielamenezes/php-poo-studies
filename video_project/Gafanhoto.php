@@ -4,8 +4,16 @@
     {
         private $login;
         private $totAssistido;
-        
-        private function viuMaisUm() {
+
+        public function __construct($nome, $idade, $sexo, $login)
+        {
+            $this->setNome($nome);
+            $this->setIdade($idade);
+            $this->setSexo($sexo);
+            $this->setLogin($login);
+            $this->totAssistido = 0;
+        }
+        public function viuMaisUm() {
             $this->setTotAssistido($this->getTotAssistido() + 1);
         }
         public function getLogin() {
