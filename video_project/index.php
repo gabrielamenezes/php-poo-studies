@@ -15,11 +15,7 @@
         $v[2] = new Video("Aula 3 de GIT");
         $v[2]->play();
         print_r($v);
-        $g = new Gafanhoto();
-        $g->setNome("Gabriela");
-        $g->setSexo("F");
-        $g->setIdade(21);
-        $g->setExp(50);
+        $g[0] = new Gafanhoto("Gabriela", 21, "F", "gabimmz");
         //$g->ganhaExp();
         print_r($g);
     ?>
