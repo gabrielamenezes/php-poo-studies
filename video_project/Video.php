@@ -8,13 +8,22 @@
         private $curtidas;
         private $reproduzindo;
 
+        public function __construct($titulo)
+        {
+            $this->titulo = $titulo;
+            $this->avaliacao = 1;
+            $this->views = 0;
+            $this->curtidas = 0;
+            $this->reproduzindo = false;
+        }
+
         public function play() {
-            if($this->pause == true || $this->reproduzindo == false) {
+            if($this->reproduzindo == false) {
                 $this->setReproduzindo(true);
             }
         }
         public function pause() {
-            if($this->play == true || $this->reproduzindo == true) {
+            if($this->reproduzindo == true) {
                 $this->setReproduzindo(false);
             }
         }
