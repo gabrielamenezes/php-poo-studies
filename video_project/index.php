@@ -23,6 +23,9 @@
         
         //AGREGANDO a minha visualização, o gafanhoto ao video
         $vis[0] = new Visualizacao($g[0], $v[2]); // Gabriela assiste aula de GIT
+        $vis[1] = new Visualizacao($g[0], $v[0]);
+        $vis[0]->avaliarP(80);
+        $vis[1]->avaliar();
         print_r($vis);
     ?>
     </pre>
